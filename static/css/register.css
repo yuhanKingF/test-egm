@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+input:-webkit-autofill { box-shadow: 0 0 0px 1000px white inset;}
+.left {
+  float: left;
+}
+html {
+  position: relative;
+}
+body {
+  background-size: 1366px 70  0px;
+}
+.register_div {
+  width: 470px;
+  height: 430px;
+  margin: 50px auto 150px auto;
+}
+.register_div>h2 {
+  color: #333333;
+  font-size: 30px;
+  font-weight: 400;
+}
+.register_div>form>.text_div {
+  width: 410px;
+  height: 46px;
+  border: 1px solid #CBCBCB;
+  margin: 25px auto 15px auto;
+  border-radius: 5px;
+  background: #ffffff;
+}
+.register_div>form>.text_div>input {
+  width: 380px;
+  height: 36px;
+  border: none;
+  float: left;
+  margin: 5px 0 0 15px;
+  outline: none;
+  font-size: 15px;
+}
+.register_div>form>.text_appear {
+  color: #9e9e9e;
+  font-size: 13px;
+  margin: 0 0 0 33px;
+  display: none;
+}
+.register_div>form>.choice_div>.top_div {
+  width: 310px;
+  height: 20px;
+  margin: 25px 0 0 35px;
+}
+.register_div>form>.choice_div>.top_div>label>p {
+  font-size: 12px;
+  display: inline;
+  float: left;
+}
+.register_div>form>.choice_div>.top_div>label>input {
+  border-radius: none;
+  float: left;
+  margin: 2px 5px 0 0;
+}
+.register_div>form>.choice_div>.bot_div_submit {
+  width: 100%;
+  height: 50px;
+  margin: 15px 0 0 0;
+}
+.register_div>form>.choice_div>.bot_div_submit>input {
+  width: 410px;
+  height: 46px;
+  background: red;
+  margin: 0 auto;
+  display: block;
+  border: none;
+  text-align: center;
+  font-size: 22px;
+  color: #F9FDFF;
+  letter-spacing: 2.2px;
+  border-radius: 5px;
+}
+.bot_text_div {
+  width: 100%;
+  height: 20px;
+  margin: 115px 0 0 0;
+  position: absolute;
+  bottom: 0;
+}
+.bot_text_div>p {
+  font-size: 12px;
+  vertical-align: middle;
+  text-align: center;
+}
+.return_div {
+  width: 100%;
+  height: 55px;
+}
+

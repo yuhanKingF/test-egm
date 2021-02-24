@@ -1,0 +1,37 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title 欢迎注册EGM账号
+    link(rel='stylesheet' href='/css/register.css')
+    script(src='/js/register.js')
+    script(src='https://unpkg.com/axios@0.20.0/dist/axios.min.js')
+
+  body(style="background: url('/img/register/img.jpg');")
+    .return_div
+      .bot_div
+    .register_div
+      h2 欢迎注册EGM账号
+      form(action='' method='POST')
+        .text_div
+          input.text_input(type='text' placeholder='邮箱地址' name='email')
+        .text_appear 6～18个字符，可使用字母、数字、下划线
+        .text_div
+          input.text_input(type='text' placeholder='账号' name='account')
+        .text_appear 7～16个数字字符
+        .text_div
+          input.text_input(type='password' placeholder='密码' name='password')
+        .text_appear 7～16个数字字符
+        .text_div
+          input.text_input(type='text' placeholder='用户名' name='username')
+        .text_appear 4～10个字符
+        .choice_div
+          .top_div
+            label(for='')
+              input.top_label_input(type='checkbox' value='是否同意' checked='true')
+              p 同意《服务条款》、《隐私政策》和《儿童隐私政策》
+          .bot_div_submit
+            input(type='button' value='立即注册')
+    .bot_text_div
+      p 冯纪源版权所有©1997-2020

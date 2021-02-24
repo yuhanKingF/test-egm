@@ -1,0 +1,169 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    each val,key in newsData
+      title #{val.title}
+    link(rel='stylesheet' href='/css/category.css')
+    script(src='/js/category.js')
+    script(src='/js/H_andC_.js')
+  body
+    .top_div
+      .bot_div
+        ul.left
+          li 要闻
+          li 国内
+          li 国际
+          li 娱乐
+          li 军事
+          li 体育
+          li 更多
+        .right
+          #unique.right
+            div
+            p
+        .eject_div
+          ul
+            li 个人信息
+            li 我的消息
+            li
+              a(href='javascript;:') 管理新闻
+            li
+              a(target='_blank' href='index.php?c=release&a=info') 发布新闻
+            li
+              a(href='index.php?c=home') 退出登录
+    .big_div
+      .left
+        .top_ranking
+          div
+            div
+          p 热点排行
+          ul.ranking_ul
+            each val,key in rankingData
+              li
+                .num_li #{key + 1 + '.'}
+                .text_li
+                  a.text_a(target='_blank' href='/cate/' + val.news_id) #{val.title}
+                .line_li
+                img.ranking_img(src=val.picture_id)
+      .bot
+        each val,key in newsData
+          .title_div
+            .title_top
+              h1 #{val.title}
+            .title_bot
+              p #{val.cre_date}
+              .subject_label #{val.category}
+          .content_div
+            img.img_div(src=val.picture_id alt='')
+            .text_div
+              p #{val.content}
+        .comment_div
+          ul.comment_ul
+            li
+              h3 评论
+            li.temporary
+              h6 暂时没有更多评论
+            each val,key in commentData
+              li.comment_li
+                .comment_top
+                  p #{val.username}
+                    | ：
+                  p #{val.ctext}
+                  a.right(href="") 删除
+                .comment_bot
+                  p #{val.ctime}
+          .comment_input
+            form(action='' method='POST')
+              .top_input
+                p 请输入你的评论
+              .mid_input
+                textarea.textarea(style='OVERFLOW:   visible' name='reworkmes' cols='40' rows='4')
+              .bot_input
+                input.right(value='发表' type='submit')
+      ul.right
+        li.right_li
+          div
+            div
+          p 要闻
+          .right_img(style="background: url('/img/home1.jpg')")
+            div
+              | //
+              p 央行：保持M2增速明显高于去年
+          ul.right_detailed
+            each val,key in category.focus
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+        li.right_li
+          div
+            div
+          p 国内
+          .right_img(style="background: url('/img/home2.jpg')")
+            div
+              | //
+              p 超重磅！降准要来了？
+          ul.right_detailed
+            each val,key in category.domestic
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+        li.right_li
+          div
+            div
+          p 国际
+          .right_img(style="background: url('/img/home6.jpg')")
+            div
+              | //
+              p 美企与华为合作制定5G标准
+          ul.right_detailed
+            each val,key in category.inter
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+        li.right_li
+          div
+            div
+          p 娱乐
+          .right_img(style="background: url('/img/home4.jpg')")
+            div
+              | //
+              p 关晓彤穿薄荷绿长裙现身
+          ul.right_detailed
+            each val,key in category.entert
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+        li.right_li
+          div
+            div
+          p 军事
+          .right_img(style="background: url('/img/home5.jpg')")
+            div
+              | //
+              p 探访广州商铺，它们还好吗？
+          ul.right_detailed
+            each val,key in category.military
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+        li.right_li
+          div
+            div
+          p 体育
+          .right_img(style="background: url('/img/home3.jpg')")
+            div
+              | //
+              p 夺冠了！意大利数千球迷上街狂欢
+          ul.right_detailed
+            each val,key in category.sports
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+        li.right_li
+          div
+            div
+          p 更多
+          .right_img(style="background: url('/img/home7.jpg')")
+            div
+              | //
+              p 你拍我 我拍你：微信到要干什么？
+          ul.right_detailed
+            each val,key in category.more
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}

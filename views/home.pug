@@ -1,0 +1,182 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title 首页
+    link(rel='stylesheet' href='/css/home.css')
+    script(src='https://unpkg.com/axios@0.20.0/dist/axios.min.js')
+    script(src='/js/home.js')
+    script(src='/js/H_andC_.js')
+  body
+    .top_div
+      .bot_div
+        ul.left
+          li 要闻
+          li 国内
+          li 国际
+          li 娱乐
+          li 军事
+          li 体育
+          li 更多
+        .right
+          #unique.right
+            div
+            p 用户名
+          .sign
+            a(href='javascript:;') 登录
+        .eject_div
+          ul
+            li 个人信息
+            li 我的消息
+            li
+              a(href='' target='_blank') 管理新闻
+            li
+              a(href='' target='_blank') 发布新闻
+            li
+              a(href='/exit') 退出登录
+              //- p 退出登录
+        .sign_div
+          form(action='/login' method='POST')
+            div
+              input(type='text' name='account' placeholder='请输入账号' autocomplete='off').user
+            div
+              input(type='password' name='password' placeholder='请输入密码' autocomplete='off').pwd
+            input.sign_sub(type='button' value='登录')
+            .sign_a.left
+              a(href='/register' target='_blank') 立即注册
+            // 管理员登录
+            .sign_a.right
+              a(href='') 管理员登录
+    .big_div
+      .left
+        .top_ranking
+          div
+            div
+          p 热点排行
+          ul.ranking_ul
+            each val,key in rankingData
+              li
+                .num_li #{key + 1 + '.'}
+                .text_li
+                  a.text_a(target='_blank' href='/cate/' + val.news_id) #{val.title}
+                .line_li
+                img.ranking_img(src=val.picture_id)
+      .bot
+        #binner_div.binner_div
+          .wrap(style='left: -620px;')
+            img(src='/img/banner/1.jpg' alt='')
+            img(src='/img/banner/2.jpg' alt='')
+            img(src='/img/banner/3.jpg' alt='')
+            img(src='/img/banner/4.jpg' alt='')
+            img(src='/img/banner/5.jpg' alt='')
+            img(src='/img/banner/1.jpg' alt='')
+            img(src='/img/banner/2.jpg' alt='')
+          a.arrow.arrow_left(href='javascript:;') <
+          a.arrow.arrow_right(href='javascript:;') >
+        .time_div
+          div
+            | 排序方式：
+            a(href='') 正序
+            a(href='') 倒序
+        .box_div
+          ul.subject_ul
+            each val,key in newsData
+              li
+                img.left(src=val.picture_id)
+                .right
+                  .subject_top
+                    a(href='/cate/' + val.news_id target='_blank') #{val.title}
+                  .subject_bot
+                    .subject_click 点击量：#{val.click}
+                    .subject_time #{val.cre_date}
+                    .subject_label #{val.category}
+      ul.right
+        li.right_li
+          div
+            div
+          p 要闻
+          .right_img(style="background: url('/img/home1.jpg')")
+            div
+              | //
+              p 央行：保持M2增速明显高于去年
+          ul.right_detailed
+            each val,key in category.focus
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+        li.right_li
+          div
+            div
+          p 国内
+          .right_img(style="background: url('/img/home2.jpg')")
+            div
+              | //
+              p 超重磅！降准要来了？
+          ul.right_detailed
+            each val,key in category.domestic
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+        li.right_li
+          div
+            div
+          p 国际
+          .right_img(style="background: url('/img/home6.jpg')")
+            div
+              | //
+              p 美企与华为合作制定5G标准
+          ul.right_detailed
+            each val,key in category.inter
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+        li.right_li
+          div
+            div
+          p 娱乐
+          .right_img(style="background: url('/img/home4.jpg')")
+            div
+              | //
+              p 关晓彤穿薄荷绿长裙现身
+          ul.right_detailed
+            each val,key in category.entert
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+        li.right_li
+          div
+            div
+          p 军事
+          .right_img(style="background: url('/img/home5.jpg')")
+            div
+              | //
+              p 探访广州商铺，它们还好吗？
+          ul.right_detailed
+            each val,key in category.military
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+        li.right_li
+          div
+            div
+          p 体育
+          .right_img(style="background: url('/img/home3.jpg')")
+            div
+              | //
+              p 夺冠了！意大利数千球迷上街狂欢
+          ul.right_detailed
+            each val,key in category.sports
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+        li.right_li
+          div
+            div
+          p 更多
+          .right_img(style="background: url('/img/home7.jpg')")
+            div
+              | //
+              p 你拍我 我拍你：微信到要干什么？
+          ul.right_detailed
+            each val,key in category.more
+              li 
+                a.distinguish(target='_blank' href='/cate/' + val.news_id) #{val.title}
+    .obstacle
+    .bot_dvi_div
+      div
+        | © 2020-2020 冯纪源版权所有
